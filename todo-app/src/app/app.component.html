@@ -1,0 +1,29 @@
+<div class="container " style="height: 600px;">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">Todo App</h1>
+    </div>
+
+    <hr class="my-4">
+    
+    <div class="col-12">
+      <input type="text" class="form-control" placeholder="text" [(ngModel)]="newTodo">
+      <div class="col-12 d-flex justify-content-end mt-4">
+        <button class="btn btn-lg btn-outline-dark" (click)="saveTodo()">Add List</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <table class="table table-dark table-hover mt-4">
+      <tbody>
+        <tr *ngFor="let todo of todos;let i =index">
+          <th style="width: 100px;" scope="row">{{i}}</th>
+          <td colspan="2" class="table-active">{{todo.name}}</td>
+          <td style="width: 100px;"><button class="btn btn-outline-danger text-light"
+              (click)="remove(i)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>
